@@ -1,0 +1,46 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Strength Prediction Form</title>
+</head>
+<body>
+    <h1>Concrete Compressive Strength Prediction</h1>
+    <form action="/" method="POST">
+        <fieldset>
+            <legend>Enter Material Properties:</legend>
+            <label for="cement">Cement (kg in a m3 mixture):</label>
+            <input type="number" name="cement" placeholder="102 to 540" id="cement" required min="0" step="any"><br><br>
+
+            <label for="blast_furnace_slag">Blast Furnace Slag (kg in a m3 mixture):</label>
+            <input type="number" name="blast_furnace_slag" placeholder="0 to 360" id="blast_furnace_slag" required min="0" step="any"><br><br>
+
+            <label for="fly_ass">Fly Ash (kg in a m3 mixture):</label>
+            <input type="number" name="fly_ass" placeholder="0 to 200" id="fly_ass" required min="0" step="any"><br><br>
+
+            <label for="water">Water (kg in a m3 mixture):</label>
+            <input type="number" name="water" placeholder="120 to 247" id="water" required min="0" step="any"><br><br>
+
+            <label for="super_plastilizer">Superplasticizer (kg in a m3 mixture):</label>
+            <input type="number" name="super_plastilizer" placeholder="0 to 20" id="super_plastilizer" required min="0" step="any"><br><br>
+
+            <label for="coarse_aggregate">Coarse Aggregate (kg in a m3 mixture):</label>
+            <input type="number" name="coarse_aggregate" placeholder="800 to 1200" id="coarse_aggregate" required min="0" step="any"><br><br>
+
+            <label for="fine_aggregate">Fine Aggregate (kg in a m3 mixture):</label>
+            <input type="number" name="fine_aggregate" placeholder="600 to 1000" id="fine_aggregate" required min="0" step="any"><br><br>
+
+            <label for="age">Age (days):</label>
+            <input type="number" name="age" placeholder="1 to 365" id="age" required min="1" step="1"><br><br>
+
+            <input type="submit" value="Predict Strength">
+        </fieldset>
+    </form>
+    {% if my_strength %}
+        <p>your mixture strength is  {{ my_strength }} and  {{feedback}}</p>
+    {% endif %}
+</body>
+</html>
+
+   
